@@ -1,5 +1,6 @@
 import './Emoji.css';
-const EMOJIS = new Map<string, string>([
+type EMOJIS_KEYS = "happy" | "sick" | "dead";
+const EMOJIS_MAP = new Map<EMOJIS_KEYS, string>([
     ["happy", "😊​"],
     ["sick", "🤢​"],
     ["dead", "😵​"],
@@ -7,7 +8,7 @@ const EMOJIS = new Map<string, string>([
 export default function Emoji(){
     return (
     <div className="emoji">
-        🙂
+        {EMOJIS_MAP.get("sick") || ​"🤔"}
     </div>
     );
 }
